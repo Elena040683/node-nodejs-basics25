@@ -3,11 +3,9 @@ import { dirname } from "path";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const getFilenameFromUrl = fileURLToPath;
 const getDirnameFromUrl = (url) => dirname(fileURLToPath(url));
-
-const _dirname = getDirnameFromUrl(import.meta.url);
-const pathToFile = path.join(_dirname, "files", "fresh.txt");
+const __dirname = getDirnameFromUrl(import.meta.url);
+const pathToFile = path.join(__dirname, "files", "fresh.txt");
 
 const create = async () => {
     try {
